@@ -1,3 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>いつまでも、ふたりで。</title>
+
+<style>
+
+body{
+    font-family: sans-serif;
+    background:#f7f7f7;
+    text-align:center;
+    margin:0;
+    padding:40px 20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.start-button{
+    font-size:28px;
+    padding:20px 40px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.start-button:hover{
+    transform:scale(1.03);
+}
+
+#message{
+    margin-top:30px;
+}
+
+.chatgpt-button{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:22px;
+    background:#10a37f;
+    color:white;
+}
+
+.steps{
+    margin-top:20px;
+    line-height:2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>いつまでも、ふたりで。</h1>
+
+<p class="subtitle">
+ボタンを押してゲームを開始してください
+</p>
+
+<button class="start-button" onclick="copyGame()">
+📋 ゲーム開始
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+function copyGame() {
+
+const text = `
+
+
+
 # 生成AI用ゲーム実装プロンプト
 ## 『いつまでも、ふたりで。』
 
@@ -1534,3 +1635,50 @@ Phase4では失われていく。
 18. 強制フェーズ移行条件が発生した場合、会話カウントを待たずに移行する。
 19. プレイヤーの選択・質問・発言によってフラグを適切に更新する。
 20. エンディング本文は、別途指定された文章を使用し、AI側で勝手に変更しない。
+
+
+`;
+
+navigator.clipboard.writeText(text);
+
+document.getElementById("message").innerHTML = `
+
+<h2>✅ コピーしました！</h2>
+
+<p>
+ChatGPTを開いて貼り付けてください
+</p>
+
+<div class="steps">
+① ChatGPTを開く<br>
+② 新しいチャットを作る<br>
+③ 貼り付ける<br>
+④ Enterでゲーム開始
+</div>
+
+<a
+class="chatgpt-button"
+href="https://chatgpt.com/"
+target="_blank"
+>
+🤖 ChatGPTを開く
+</a>
+
+`;
+
+}
+
+</script>
+
+    <hr style="margin:40px 0;">
+
+<p>
+他のゲームも遊んでみる？
+</p>
+
+<a class="chatgpt-button"
+href="../">
+🎮 ゲーム一覧へ
+</a>
+</body>
+</html>
